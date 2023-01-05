@@ -40,13 +40,13 @@
 			<value>net.sf.log4jdbc.sql.jdbcapi.DriverSpy</value>
 		</property>
 		<property name="url">
-			<value>jdbc:log4jdbc:mariadb://localhost:3306/adam</value>
+			<value>jdbc:log4jdbc:mariadb://localhost:3306/test</value>
 		</property>
 		<property name="username">
 			<value>root</value>
 		</property>
 		<property name="password">
-			<value>wnddkd</value>
+			<value>1234</value>
 		</property>
 </bean>
 
