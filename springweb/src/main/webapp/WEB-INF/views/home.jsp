@@ -5,10 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Spring MVC</title>
+<!-- link는 파일의 위치기준이 아니고 URL기준이다. -->
+	<link rel =" stylesheet" href="./css/style.css">
 </head>
 <body>
-	<!-- link는 파일의 위치기준이 아니고 URL기준이다. -->
-	<link rel =" stylesheet" href="./css/style.css">
+	<a href="item.xls">엑셀 다운로드</a><br/>
+	<a href="item.pdf">PDF 다운로드</a><br/>
+	
 	<div align="center" class="body">
 		<h2>상품목록</h2>
 		<table border="1">
@@ -20,7 +23,8 @@
 			<c:forEach var="item" items="${list}">
 				<tr class="record">
 					<td align="center" width="80">${item.itemid}</td>
-					<td align="left" width="320">${item.itemname}</td>
+					<td align="left" width="320">
+					<a href="detail/itemid=${item.itemname}">${item.itemname}</a></td>
 					<td align="right" width="100">${item.price}</td>
 				</tr>
 			</c:forEach>

@@ -39,6 +39,34 @@ public class ItemController {
 		return "home";
 	}
 	
+	@RequestMapping(value="detail/{itemid}", method = RequestMethod.GET)
+	public String detail(Model model, @PathVariable("itemid") int itemid){
+		//서비스 메서드 호출
+		ItemDTO dto = itemService.getItem(itemid);
+		
+		//데이터 전달
+		model.addAttribute("item",dto);
+		
+		//출력할 뷰 이름설정
+		return "detail";
+	}
+	
+	//item.xls요청이 왔을 때 excel이라는 뷰로 출력 -> 엑셀다운로드가 생긴다
+	@RequestMapping(value="item.xls", method=RequestMethod.GET)
+	public String excel(Model model) {
+		
+		List<ItemDTO> list = itemService.allItem();
+		model.addAttribute("list", list);
+		return "excel";
+	}
+	@RequestMapping(value="item.pdf", method=RequestMethod.GET)
+	public String pdf(Model model) {
+		
+		List<ItemDTO> list = itemService.allItem();
+		model.addAttribute("list", list);
+		return "pdf";
+	}
+
 
 	/*
 	@RequestMapping(value="hello", method=RequestMethod.GET)

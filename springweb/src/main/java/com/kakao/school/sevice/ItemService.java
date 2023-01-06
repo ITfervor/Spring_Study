@@ -21,6 +21,8 @@ public interface ItemService {
 				.build();
 		return entity;
 	}
+	//g하나의 데이터를 가져오는 메서
+	public ItemDTO getItem(int itemid);
 	
 	//Entity를 DTO로 변환하는 메서드
 	public default ItemDTO entityToDTO(ItemEntity entity) {

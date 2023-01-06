@@ -30,6 +30,19 @@ public class ItemServiceImpl implements ItemService {
 		}
 		return list;
 	}
+
+	
+	@Override
+	public ItemDTO getItem(int itemid) {
+		ItemDTO dto = null;
+		
+		ItemEntity entity = itemMapper.getItem(itemid);
+		if(entity != null) {
+			dto = entityToDTO(entity);
+			
+		}
+		return dto;
+	}
 }
 
 
